@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>[Project name] · [Your Name]</title>
+  <script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body class="projects">
+
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html">[Your Name]</a>
+      <nav aria-label="Main">
+        <a href="index.html">About</a>
+        <a href="experience.html">Work Experience</a>
+        <a href="projects.html" aria-current="page">Projects</a>
+        <a href="cv.html">CV</a>
+        <a href="interests.html">Interests</a>
+      </nav>
+      <button id="theme-toggle" type="button" aria-label="Toggle dark mode">◐</button>
+    </div>
+    <div class="strata" aria-hidden="true"></div>
+  </header>
+
+  <main class="container page">
+    <a class="back-link" href="projects.html">← Back to Projects</a>
+
+    <h1 class="page-title">[Project name]</h1>
+    <p class="project-meta">[Category] · [Course / Lab] · [Year]</p>
+
+    <section>
+      <h2>Overview</h2>
+      <p>
+        A short paragraph: what the project was about, the question or problem
+        you set out to answer, and why it matters.
+      </p>
+    </section>
+
+    <section>
+      <h2>What I Did</h2>
+      <ul>
+        <li>A key step, method, or analysis you carried out.</li>
+        <li>Another step, such as fieldwork, modelling, or data cleaning.</li>
+        <li>Another step, or your role if it was a group project.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Key Findings</h2>
+      <p>
+        One or two sentences on what you found or learned, ideally with a number
+        or concrete result.
+      </p>
+    </section>
+
+    <!-- OPTIONAL: an image or figure. Remove the comment markers to use it.
+    <figure class="project-figure">
+      <img src="figure1.jpg" alt="Describe the image">
+      <figcaption>Figure 1: caption here.</figcaption>
+    </figure>
+    -->
+
+    <section>
+      <h2>Tools &amp; Methods</h2>
+      <ul class="tags">
+        <li>Python</li>
+        <li>ArcGIS</li>
+        <li>[Tool]</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Links</h2>
+      <p>
+        <a href="#">Report (PDF)</a> ·
+        <a href="https://github.com/yourusername/repo-name">Code on GitHub</a>
+      </p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <ul class="social">
+        <li><a href="mailto:you@example.com" aria-label="Email" title="Email"><i class="fa-solid fa-envelope"></i></a></li>
+        <li><a href="https://www.linkedin.com/in/yourname" aria-label="LinkedIn" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a></li>
+        <li><a href="https://github.com/yourusername" aria-label="GitHub" title="GitHub"><i class="fa-brands fa-github"></i></a></li>
+        <li><a href="https://instagram.com/yourname" aria-label="Instagram" title="Instagram"><i class="fa-brands fa-instagram"></i></a></li>
+      </ul>
+      <p>Email and LinkedIn are the best ways to reach me.</p>
+      <p>© <span id="year"></span> [Your Name]</p>
+    </div>
+  </footer>
+
+</body>
+</html>
