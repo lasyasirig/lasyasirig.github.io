@@ -219,8 +219,71 @@ section h2 {
   font-size: 0.93rem;
 }
 
-/* Footer */
-.footer { padding-top: 2rem; padding-bottom: 3rem; color: var(--muted); font-size: 0.9rem; }
+/* ========== 5b. MULTI-PAGE + FOOTER ICONS ========== */
+
+/* Highlights the page you're currently on in the menu */
+.nav nav a[aria-current="page"] {
+  color: var(--accent);
+  border-bottom: 2px solid var(--accent-2);
+}
+
+/* Title at the top of each inner page */
+.page { padding-top: 2.5rem; padding-bottom: 2rem; min-height: 60vh; }
+.page-title {
+  font-size: 1.9rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--border);
+}
+
+/* Footer with contact icons */
+.footer {
+  margin-top: 3rem;
+  padding: 2rem 0 3rem;
+  border-top: 1px solid var(--border);
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+.footer p { margin: 0 0 0.4rem; }
+
+.social {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 0;
+  margin: 0 0 1.25rem;
+}
+.social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--text);
+  font-size: 1.2rem;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+.social a:hover {
+  background: var(--accent-2);
+  border-color: var(--accent-2);
+  color: var(--button-text);
+  text-decoration: none;
+}
+/* Sub-headings inside inner pages (used on the Interests page) */
+.page section { padding: 1rem 0; }
+.page section h2 {
+  font-size: 1.3rem;
+  color: var(--accent);
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: 1rem;
+}
 
 /* ========== 6. MOBILE ========== */
 @media (max-width: 640px) {
