@@ -1,42 +1,69 @@
-/* ========== 1. DESIGN SETTINGS: change these to restyle the site ========== */
+/* ========== FONTS: to change fonts, edit this line + the two --font lines below ========== */
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Work+Sans:wght@400;500;600&display=swap");
+
+/* ========== 1. DESIGN SETTINGS ========== */
 :root {
-  --bg: #f5f0e6;          /* sand */
-  --text: #2b2a24;        /* dark umber */
-  --muted: #6b6455;       /* weathered brown-grey */
-  --accent: #4a6b3a;      /* moss green */
-  --accent-2: #a8552d;    /* terracotta (hover, highlights) */
-  --border: #ddd3bf;
-  --card: #ece4d3;        /* clay */
+  /* Neutrals (light mode: white) */
+  --bg: #ffffff;
+  --text: #1f1f1f;
+  --muted: #5f5f5f;
+  --border: #e5e5e2;
+  --card: #f7f7f5;
   --button-text: #ffffff;
 
-  --font: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  --font-heading: "Lora", Georgia, "Times New Roman", serif;
+  /* Earthy section colors */
+  --moss: #4a6b3a;
+  --terracotta: #a8552d;
+  --ochre: #94650f;
+  --slate: #2f6f73;
+  --amethyst: #6d4c7d;
+
+  /* The page's highlight color (overridden per page below) */
+  --accent: var(--moss);
+
+  --font: "Work Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-heading: "Fraunces", Georgia, "Times New Roman", serif;
   --max-width: 780px;
   --radius: 10px;
 }
 
+/* Which color each page uses (set by <body class="..."> in each HTML file) */
+body.about       { --accent: var(--moss); }
+body.experience  { --accent: var(--terracotta); }
+body.projects    { --accent: var(--ochre); }
+body.cv          { --accent: var(--slate); }
+body.interests   { --accent: var(--amethyst); }
+
 /* Dark mode: follows the visitor's device unless they click the toggle */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --bg: #1c1a15;
-    --text: #ece4d3;
-    --muted: #a39b88;
-    --accent: #a3c185;
-    --accent-2: #d98c63;
-    --border: #3a362c;
-    --card: #26231c;
-    --button-text: #1c1a15;
+    --bg: #121212;
+    --text: #ececec;
+    --muted: #a0a0a0;
+    --border: #2e2e2e;
+    --card: #1c1c1c;
+    --button-text: #121212;
+
+    --moss: #a3c185;
+    --terracotta: #e08a5b;
+    --ochre: #e3b64f;
+    --slate: #6fc0c4;
+    --amethyst: #c4a1d6;
   }
 }
 :root[data-theme="dark"] {
-  --bg: #1c1a15;
-  --text: #ece4d3;
-  --muted: #a39b88;
-  --accent: #a3c185;
-  --accent-2: #d98c63;
-  --border: #3a362c;
-  --card: #26231c;
-  --button-text: #1c1a15;
+  --bg: #121212;
+  --text: #ececec;
+  --muted: #a0a0a0;
+  --border: #2e2e2e;
+  --card: #1c1c1c;
+  --button-text: #121212;
+
+  --moss: #a3c185;
+  --terracotta: #e08a5b;
+  --ochre: #e3b64f;
+  --slate: #6fc0c4;
+  --amethyst: #c4a1d6;
 }
 
 /* ========== 2. BASICS ========== */
@@ -60,13 +87,13 @@ body {
 }
 
 a { color: var(--accent); text-decoration: none; }
-a:hover { color: var(--accent-2); text-decoration: underline; }
+a:hover { text-decoration: underline; }
 a:focus-visible, button:focus-visible {
-  outline: 2px solid var(--accent-2);
+  outline: 2px solid var(--accent);
   outline-offset: 3px;
 }
 
-h1, h2, h3 { line-height: 1.25; margin: 0; font-family: var(--font-heading); }
+h1, h2, h3 { line-height: 1.25; margin: 0; font-family: var(--font-heading); font-weight: 700; }
 p { margin: 0 0 1rem; }
 
 /* ========== 3. HEADER / NAV ========== */
@@ -91,9 +118,23 @@ p { margin: 0 0 1rem; }
   color: var(--text);
 }
 .brand:hover { color: var(--accent); text-decoration: none; }
+
 .nav nav { display: flex; gap: 1.1rem; flex-wrap: wrap; }
-.nav nav a { color: var(--muted); font-size: 0.92rem; font-weight: 500; }
-.nav nav a:hover { color: var(--accent-2); text-decoration: none; }
+.nav nav a {
+  color: var(--muted);
+  font-size: 0.92rem;
+  font-weight: 500;
+  padding-bottom: 2px;
+  border-bottom: 2px solid transparent;
+}
+/* Each menu item has its own color (in menu order) */
+.nav nav a:nth-child(1) { --c: var(--moss); }
+.nav nav a:nth-child(2) { --c: var(--terracotta); }
+.nav nav a:nth-child(3) { --c: var(--ochre); }
+.nav nav a:nth-child(4) { --c: var(--slate); }
+.nav nav a:nth-child(5) { --c: var(--amethyst); }
+.nav nav a:hover { color: var(--c); text-decoration: none; }
+.nav nav a[aria-current="page"] { color: var(--c); border-bottom-color: var(--c); }
 
 #theme-toggle {
   background: none;
@@ -107,21 +148,20 @@ p { margin: 0 0 1rem; }
 }
 #theme-toggle:hover { border-color: var(--accent); }
 
-/* Layered "rock strata" stripe: edit the colors or heights to change it */
+/* Colored strip under the header: one band per section color */
 .strata {
   height: 6px;
   background: linear-gradient(
     to right,
-    #8b5e3c 0 18%,
-    #c9a66b 18% 34%,
-    #a8552d 34% 46%,
-    #6f8f4e 46% 70%,
-    #d8c7a0 70% 84%,
-    #5b4636 84% 100%
+    var(--moss) 0 20%,
+    var(--terracotta) 20% 40%,
+    var(--ochre) 40% 60%,
+    var(--slate) 60% 80%,
+    var(--amethyst) 80% 100%
   );
 }
 
-/* ========== 4. HERO ========== */
+/* ========== 4. HERO (home page) ========== */
 .hero {
   display: flex;
   align-items: center;
@@ -134,12 +174,11 @@ p { margin: 0 0 1rem; }
   border-radius: 50%;
   object-fit: cover;
   background: var(--card);
-  border: 3px solid var(--border);
+  border: 3px solid var(--accent);
   flex-shrink: 0;
 }
 .hero h1 { font-size: 2.5rem; letter-spacing: -0.01em; }
 .tagline { color: var(--muted); margin: 0.35rem 0 0.75rem; }
-.links { display: flex; flex-wrap: wrap; gap: 1rem; margin: 0; font-weight: 500; }
 
 /* ========== 5. SECTIONS ========== */
 section { padding: 2rem 0; }
@@ -147,10 +186,10 @@ section h2 {
   font-size: 1.6rem;
   margin-bottom: 1.25rem;
   padding-bottom: 0.5rem;
-  border-bottom: 2px solid var(--border);
+  border-bottom: 2px solid var(--accent);
 }
 
-/* Experience / extra-curricular rows: date on the left, details on the right */
+/* Experience / extra-curricular rows: date left, details right */
 .entry {
   display: grid;
   grid-template-columns: 160px 1fr;
@@ -179,11 +218,11 @@ section h2 {
   border-radius: var(--radius);
   padding: 1.1rem 1.25rem;
   color: var(--text);
-  transition: transform 0.15s ease, border-left-color 0.15s ease;
+  transition: transform 0.15s ease, border-color 0.15s ease;
 }
 .card:hover {
   transform: translateY(-2px);
-  border-left-color: var(--accent-2);
+  border-color: var(--accent);
   color: var(--text);
   text-decoration: none;
 }
@@ -195,6 +234,7 @@ section h2 {
 .cv-box {
   background: var(--card);
   border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
   border-radius: var(--radius);
   padding: 1.5rem;
 }
@@ -205,38 +245,40 @@ section h2 {
   font-weight: 600;
   padding: 0.6rem 1.25rem;
   border-radius: 999px;
-  transition: background 0.15s ease;
+  transition: opacity 0.15s ease;
 }
-.button:hover { background: var(--accent-2); color: var(--button-text); text-decoration: none; }
+.button:hover { opacity: 0.85; color: var(--button-text); text-decoration: none; }
 
 /* Interest tags */
 .tags { list-style: none; display: flex; flex-wrap: wrap; gap: 0.5rem; padding: 0; margin: 0; }
 .tags li {
   background: var(--card);
-  border: 1px solid var(--border);
+  border: 1px solid var(--accent);
   border-radius: 999px;
   padding: 0.3rem 0.95rem;
   font-size: 0.93rem;
 }
 
-/* ========== 5b. MULTI-PAGE + FOOTER ICONS ========== */
-
-/* Highlights the page you're currently on in the menu */
-.nav nav a[aria-current="page"] {
-  color: var(--accent);
-  border-bottom: 2px solid var(--accent-2);
-}
-
-/* Title at the top of each inner page */
+/* ========== 5b. INNER PAGES ========== */
 .page { padding-top: 2.5rem; padding-bottom: 2rem; min-height: 60vh; }
 .page-title {
   font-size: 1.9rem;
   margin-bottom: 1.5rem;
   padding-bottom: 0.5rem;
-  border-bottom: 2px solid var(--border);
+  border-bottom: 2px solid var(--accent);
 }
 
-/* Footer with contact icons */
+/* Sub-headings inside inner pages (Interests page) */
+.page section { padding: 1rem 0; }
+.page section h2 {
+  font-size: 1.3rem;
+  color: var(--accent);
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: 1rem;
+}
+
+/* ========== 5c. FOOTER WITH ICONS ========== */
 .footer {
   margin-top: 3rem;
   padding: 2rem 0 3rem;
@@ -270,19 +312,10 @@ section h2 {
   transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
 }
 .social a:hover {
-  background: var(--accent-2);
-  border-color: var(--accent-2);
+  background: var(--accent);
+  border-color: var(--accent);
   color: var(--button-text);
   text-decoration: none;
-}
-/* Sub-headings inside inner pages (used on the Interests page) */
-.page section { padding: 1rem 0; }
-.page section h2 {
-  font-size: 1.3rem;
-  color: var(--accent);
-  border-bottom: none;
-  padding-bottom: 0;
-  margin-bottom: 1rem;
 }
 
 /* ========== 6. MOBILE ========== */
@@ -292,12 +325,11 @@ section h2 {
   .nav nav { order: 3; width: 100%; gap: 0.5rem 1rem; }
   .hero { flex-direction: column; text-align: center; padding-top: 2.5rem; }
   .hero h1 { font-size: 2rem; }
-  .links { justify-content: center; }
   .entry { grid-template-columns: 1fr; gap: 0.25rem; }
 }
 
 /* Respect users who prefer less motion */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .card, .button { transition: none; }
+  .card, .button, .social a { transition: none; }
 }
