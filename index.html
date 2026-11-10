@@ -4,10 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Lasya Siri G</title>
-  <meta name="description" content="Lasya Siri G – [your profession], personal website and resume.">
+  <meta name="description" content="Lasya Siri G – Earth Sciences student. Personal website and resume.">
+  <script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lora:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
 </head>
@@ -15,122 +17,54 @@
 
   <header class="site-header">
     <div class="container nav">
-      <a class="brand" href="#top">Lasya Siri G</a>
+      <a class="brand" href="index.html">Lasya Siri G</a>
       <nav aria-label="Main">
-        <a href="#about">About</a>
-        <a href="#experience">Experience</a>
-        <a href="#education">Education</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
+        <a href="index.html" aria-current="page">About</a>
+        <a href="experience.html">Work Experience</a>
+        <a href="projects.html">Projects</a>
+        <a href="cv.html">CV</a>
+        <a href="extracurriculars.html">Extra-Curriculars</a>
+        <a href="interests.html">Interests</a>
       </nav>
       <button id="theme-toggle" type="button" aria-label="Toggle dark mode">◐</button>
     </div>
+    <div class="strata" aria-hidden="true"></div>
   </header>
 
-  <main class="container" id="top">
-
-    <!-- HERO -->
+  <main class="container">
     <section class="hero">
       <img class="avatar" src="photo.jpg" alt="Portrait of Lasya Siri G">
       <div>
         <h1>Lasya Siri G</h1>
-        <p class="tagline">[Your title] · [City, Country]</p>
-        <p class="links">
-          <a href="mailto:you@example.com">Email</a>
-          <a href="https://linkedin.com/in/yourname">LinkedIn</a>
-          <a href="https://github.com/yourusername">GitHub</a>
-          <a href="resume.pdf">Download CV (PDF)</a>
-        </p>
+        <p class="tagline">Earth Sciences student · [University] · [City, Country]</p>
       </div>
     </section>
 
-    <!-- ABOUT -->
-    <section id="about">
+    <section>
       <h2>About</h2>
       <p>
-        Write 2–4 sentences about who you are, what you do, and what you're
-        looking for or interested in.
+        Write 3–4 sentences here: who you are, what you study, what draws you
+        to Earth Sciences, and what you hope to do next (research, fieldwork,
+        graduate study, industry, etc.).
+      </p>
+      <p>
+        You can add a second paragraph, and links to your other pages, like
+        <a href="projects.html">my projects</a>.
       </p>
     </section>
-
-    <!-- EXPERIENCE -->
-    <section id="experience">
-      <h2>Experience</h2>
-
-      <article class="entry">
-        <div class="entry-date">2023 – Present</div>
-        <div class="entry-body">
-          <h3>[Job Title]</h3>
-          <p class="org">[Company], [City]</p>
-          <ul>
-            <li>Describe an achievement using numbers where you can.</li>
-            <li>Describe another responsibility or result.</li>
-          </ul>
-        </div>
-      </article>
-
-      <article class="entry">
-        <div class="entry-date">2020 – 2023</div>
-        <div class="entry-body">
-          <h3>[Previous Job Title]</h3>
-          <p class="org">[Company], [City]</p>
-          <ul>
-            <li>Describe an achievement.</li>
-            <li>Describe another one.</li>
-          </ul>
-        </div>
-      </article>
-    </section>
-
-    <!-- EDUCATION -->
-    <section id="education">
-      <h2>Education</h2>
-
-      <article class="entry">
-        <div class="entry-date">2016 – 2020</div>
-        <div class="entry-body">
-          <h3>[Degree, Major]</h3>
-          <p class="org">[University], [City]</p>
-        </div>
-      </article>
-    </section>
-
-    <!-- PROJECTS -->
-    <section id="projects">
-      <h2>Projects</h2>
-      <div class="cards">
-        <a class="card" href="#">
-          <h3>[Project name]</h3>
-          <p>One or two lines about what it is and what you did.</p>
-        </a>
-        <a class="card" href="#">
-          <h3>[Project name]</h3>
-          <p>One or two lines about what it is and what you did.</p>
-        </a>
-      </div>
-    </section>
-
-    <!-- SKILLS -->
-    <section id="skills">
-      <h2>Skills</h2>
-      <ul class="tags">
-        <li>Skill one</li>
-        <li>Skill two</li>
-        <li>Skill three</li>
-        <li>Skill four</li>
-      </ul>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>The best way to reach me is <a href="mailto:you@example.com">you@example.com</a>.</p>
-    </section>
-
   </main>
 
-  <footer class="container footer">
-    <p>© <span id="year"></span> Lasya Siri G</p>
+  <footer class="footer">
+    <div class="container">
+      <ul class="social">
+        <li><a href="mailto:you@example.com" aria-label="Email" title="Email"><i class="fa-solid fa-envelope"></i></a></li>
+        <li><a href="https://www.linkedin.com/in/yourname" aria-label="LinkedIn" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a></li>
+        <li><a href="https://github.com/yourusername" aria-label="GitHub" title="GitHub"><i class="fa-brands fa-github"></i></a></li>
+        <li><a href="https://instagram.com/yourname" aria-label="Instagram" title="Instagram"><i class="fa-brands fa-instagram"></i></a></li>
+      </ul>
+      <p>Email and LinkedIn are the best ways to reach me.</p>
+      <p>© <span id="year"></span> Lasya Siri G</p>
+    </div>
   </footer>
 
 </body>
