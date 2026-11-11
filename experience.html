@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
 </head>
-<body>
+<body class="experience">
 
   <header class="site-header">
     <div class="container nav">
@@ -29,28 +29,42 @@
   <main class="container page">
     <h1 class="page-title">Work Experience</h1>
 
-    <article class="entry">
-      <div class="entry-date">Jun 2025 – Aug 2025</div>
-      <div class="entry-body">
-        <h3>[Position title]</h3>
-        <p class="org">[Organisation], [Location]</p>
-        <ul>
-          <li>What you did, with numbers or outcomes where possible.</li>
-          <li>A skill or tool you used (e.g. ArcGIS, Python, field mapping).</li>
-        </ul>
-      </div>
-    </article>
+    <ol class="timeline">
 
-    <article class="entry">
-      <div class="entry-date">2024</div>
-      <div class="entry-body">
-        <h3>[Position title]</h3>
-        <p class="org">[Organisation], [Location]</p>
-        <ul>
-          <li>What you did.</li>
-        </ul>
-      </div>
-    </article>
+      <!-- JOB 1 (most recent): copy this whole <li> block to add a new job -->
+      <li class="timeline-item">
+        <span class="timeline-date">Jun 2025 – Aug 2025</span>
+        <a class="timeline-card" href="work-1.html">
+          <h3>[Position title]</h3>
+          <p class="org">[Organisation], [Location]</p>
+          <p class="summary">One or two lines about what you did there.</p>
+          <span class="read-more">View details →</span>
+        </a>
+      </li>
+
+      <!-- JOB 2 -->
+      <li class="timeline-item">
+        <span class="timeline-date">Jan 2025 – Mar 2025</span>
+        <a class="timeline-card" href="work-2.html">
+          <h3>[Position title]</h3>
+          <p class="org">[Organisation], [Location]</p>
+          <p class="summary">One or two lines about what you did there.</p>
+          <span class="read-more">View details →</span>
+        </a>
+      </li>
+
+      <!-- JOB 3 -->
+      <li class="timeline-item">
+        <span class="timeline-date">2024</span>
+        <a class="timeline-card" href="work-3.html">
+          <h3>[Position title]</h3>
+          <p class="org">[Organisation], [Location]</p>
+          <p class="summary">One or two lines about what you did there.</p>
+          <span class="read-more">View details →</span>
+        </a>
+      </li>
+
+    </ol>
   </main>
 
   <footer class="footer">
