@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>[Position title] · [Your Name]</title>
+  <script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body class="experience">
+
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html">[Your Name]</a>
+      <nav aria-label="Main">
+        <a href="index.html">About</a>
+        <a href="experience.html" aria-current="page">Work Experience</a>
+        <a href="projects.html">Projects</a>
+        <a href="cv.html">CV</a>
+        <a href="interests.html">Interests</a>
+      </nav>
+      <button id="theme-toggle" type="button" aria-label="Toggle dark mode">◐</button>
+    </div>
+    <div class="strata" aria-hidden="true"></div>
+  </header>
+
+  <main class="container page">
+    <a class="back-link" href="experience.html">← Back to Work Experience</a>
+
+    <h1 class="page-title">[Position title]</h1>
+    <p class="project-meta">[Organisation] · [Location] · Sep 2025 – Oct 2025</p>
+
+    <section>
+      <h2>Overview</h2>
+      <p>
+        A short paragraph about the role: what the organisation does, what team
+        or lab you were part of, and what you were hired to work on.
+      </p>
+    </section>
+
+    <section>
+      <h2>Responsibilities</h2>
+      <ul>
+        <li>A main task you handled, such as fieldwork, data analysis, or lab work.</li>
+        <li>Another responsibility.</li>
+        <li>Another responsibility.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Achievements</h2>
+      <ul>
+        <li>A result with a number if possible, for example "mapped 40 km² of ...".</li>
+        <li>Something you learned, presented, or contributed.</li>
+      </ul>
+    </section>
+
+    <!-- OPTIONAL: a photo from the job. Remove the comment markers to use it.
+    <figure class="project-figure">
+      <img src="work-1-photo.jpg" alt="Describe the image">
+      <figcaption>Caption here.</figcaption>
+    </figure>
+    -->
+
+    <section>
+      <h2>Skills &amp; Tools</h2>
+      <ul class="tags">
+        <li>ArcGIS</li>
+        <li>Python</li>
+        <li>[Skill]</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <ul class="social">
+        <li><a href="mailto:you@example.com" aria-label="Email" title="Email"><i class="fa-solid fa-envelope"></i></a></li>
+        <li><a href="https://www.linkedin.com/in/yourname" aria-label="LinkedIn" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a></li>
+        <li><a href="https://github.com/yourusername" aria-label="GitHub" title="GitHub"><i class="fa-brands fa-github"></i></a></li>
+        <li><a href="https://instagram.com/yourname" aria-label="Instagram" title="Instagram"><i class="fa-brands fa-instagram"></i></a></li>
+      </ul>
+      <p>Email and LinkedIn are the best ways to reach me.</p>
+      <p>© <span id="year"></span> [Your Name]</p>
+    </div>
+  </footer>
+
+</body>
+</html>
